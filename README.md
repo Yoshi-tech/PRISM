@@ -106,10 +106,6 @@ This alpha release demonstrates the foundational building blocks of a software r
 
 ---
 
-## Build Instructions (Example)
-
-```powershell
-g++ main.cpp Renderer.cpp Vec3.cpp -o prism.exe -lgdi32 -mwindows
 
 ## Acknowledgments
 
