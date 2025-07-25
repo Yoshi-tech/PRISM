@@ -126,20 +126,6 @@ class Vec3{
 
         // angle betwen two vectors
 
-       /* double angle(const Vec3 &g) {
-
-
-            double magnitude = g.length() * g.length();
-
-            if (magnitude != 0.0){
-
-                return acos(scalarP(g)/magnitude);
-            }
-
-            return 0.0;
-
-        }*/
-
         // dot product
 
         /*inline double dotP(const Vec3 &g) {
@@ -158,12 +144,14 @@ class Vec3{
 
         // cross product
 
-        /*inline double crossP(const Vec3 &g) {
+        Vec3 cross(const Vec3 &a, const Vec3 &b) {
+            return Vec3(
+                a.vec[1] * b.vec[2] - a.vec[2] * b.vec[1],
+                a.vec[2] * b.vec[0] - a.vec[0] * b.vec[2],
+                a.vec[0] * b.vec[1] - a.vec[1] * b.vec[0]
+            );
+        }
 
-            double magnitude = length() * length();
-
-            return sin(angle(g)) * magnitude;
-        }*/
 
         // vector product
 
