@@ -124,6 +124,21 @@ class mat4{
             return i;
         }
 
+        static mat4 perspective(double fov, double aspect, double near, double far) {
+            double radians = fov * M_PI / 180.0;
+            double tanHalfFov = tan(radians / 2.0);
+            mat4 result;
+            result.clearMat();
+
+            result.set(0, 0, 1.0 / (aspect * tanHalfFov));
+            result.set(1, 1, 1.0 / tanHalfFov);
+            result.set(2, 2, -(far + near) / (far - near));
+            result.set(2, 3, -(2.0 * far * near) / (far - near));
+            result.set(3, 2, -1.0);
+
+            return result;
+        }
+
 
 
 };
